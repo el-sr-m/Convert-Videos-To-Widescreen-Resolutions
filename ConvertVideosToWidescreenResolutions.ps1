@@ -325,8 +325,8 @@ Else {
 						Write-Host $_ -ForegroundColor Red -NoNewline;
 						# Announce the current percentage completed
 						Write-Host "          Completed: " -NoNewline;
-						Write-Host ( [Math]::Round( 100 * ( [TimeSpan]::Parse( $_ ) ).TotalSeconds / $CurrentVideoLength, 2 ) ) -ForegroundColor Cyan -NoNewline;
-						Write-Host "% " -ForegroundColor Cyan -NoNewline
+						Write-Host ( [Math]::Round( 100 * ( [TimeSpan]::Parse( $_ ) ).TotalSeconds / $CurrentVideoLength, 2 ) ).ToString("00.00") -ForegroundColor Cyan -NoNewline;
+						Write-Host "%" -ForegroundColor Cyan -NoNewline
 					}
 				# Stop the stopwatch
 				$VideoConversionStopwatch.Stop()
