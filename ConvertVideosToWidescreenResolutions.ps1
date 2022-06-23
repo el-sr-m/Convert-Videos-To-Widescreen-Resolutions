@@ -262,7 +262,9 @@ Else {
 		If ( $VideoObject.ListOfInputVideos ) {
 			# Loop through the individual lists of videos
 			ForEach ( $Video in $VideoObject.ListOfInputVideos ) {
-				# Set up the strings representing the input and output
+				# Set up the strings representing the input and output (I tried
+				# having these "in-line" with the individual commands but that
+				# didn't work)
 				$InputFileWithPath  = $VideoObject.InputPath + $Video
 				$OutputFileWithPath = $VideoObject.OutputPath + $Video
 				$FrameHeight = $VideoObject.Height
