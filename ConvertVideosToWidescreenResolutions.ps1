@@ -254,7 +254,7 @@ If ( $VideoNamingCollisions ) {
 Else {
 	# Announce the start of video processing
 	Write-Host " Starting Video Processing "  -BackgroundColor DarkCyan -ForegroundColor White
-	# Start a stopwatch
+	# Start a stopwatch for the overall processing time
 	$AllVideosConversionStopwatch = [Diagnostics.Stopwatch]::StartNew()
 	# Loop through each item in the collection
 	ForEach ( $VideoObject in $ConvertTheseVideos ) {
@@ -343,7 +343,7 @@ Else {
 			}
 		}
 	}
-	# Start a stopwatch
+	# Stop the overall processing time stopwatch
 	$AllVideosConversionStopwatch.Stop()
 	# Announce that all videos have completed processing
 	Write-Host " All Videos Have Completed Processing "  -BackgroundColor DarkCyan -ForegroundColor White -NoNewline
