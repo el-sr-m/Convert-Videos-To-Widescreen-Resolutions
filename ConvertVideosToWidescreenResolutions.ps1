@@ -175,7 +175,7 @@ ForEach ( $VideoObject in $ConvertTheseVideos ) {
 			# Check to see if the item is already in the array
 			If ( $VideosInOutputFolders -iNotContains $OutputFolderVideoWithPath ) {
 				# If it isn't, add the video (with full path) to the array
-				$VideosInOutputFolders.Add( "$OutputFolderVideoWithPath" )
+				$VideosInOutputFolders.Add( $OutputFolderVideoWithPath )
 			}
 		}
 	}
@@ -208,8 +208,8 @@ ForEach ( $VideoObject in $ConvertTheseVideos ) {
 			}
 			Else {
 				# Add the video (with full path) to the arrays
-				$VideosInInputFoldersWithPaths.Add( "$InputFolderVideoWithPath" )
-				$VideosInInputFoldersWithoutPaths.Add( "$InputFolderVideo" )
+				$VideosInInputFoldersWithPaths.Add( $InputFolderVideoWithPath )
+				$VideosInInputFoldersWithoutPaths.Add( $InputFolderVideo )
 			}
 		}
 	}
@@ -298,8 +298,8 @@ Else {
 				Write-Host "      Current Video Length: " -NoNewline
 				Write-Host ( "{0:hh\:mm\:ss\.ff}" -f [TimeSpan]::FromSeconds( $CurrentVideoLength ) ) -ForegroundColor Blue -NoNewline
 				# Announce the total size of the video being processed
-				Write-Host "   Total Video Size:" -NoNewline
-				Write-Host " $CurrentVideoReadableSize" -ForegroundColor DarkMagenta
+				Write-Host "   Total Video Size: " -NoNewline
+				Write-Host $CurrentVideoReadableSize -ForegroundColor DarkMagenta
 				# Start a stopwatch
 				$VideoConversionStopwatch = [Diagnostics.Stopwatch]::StartNew()
 				# Run ffmpeg.exe to modify the video
@@ -320,7 +320,7 @@ Else {
 						# combined with the "-NoNewline" flag trickery again so
 						# I could give proper credit)
 						Write-Host "`r          Current Position: " -NoNewline;
-						Write-Host "$_" -ForegroundColor Red -NoNewline;
+						Write-Host $_ -ForegroundColor Red -NoNewline;
 						# Announce the current percentage completed
 						Write-Host "          Completed: " -NoNewline;
 						Write-Host ( [Math]::Round( 100 * ( [TimeSpan]::Parse( $_ ) ).TotalSeconds / $CurrentVideoLength, 2 ) ) -ForegroundColor Cyan -NoNewline;
