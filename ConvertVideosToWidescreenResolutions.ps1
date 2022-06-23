@@ -164,8 +164,6 @@ $VideoNamingCollisions             = New-Object System.Collections.Generic.List[
 # BEGIN: Prep-Work Section
 ################################################################################
 
-# -- Setup Part 3 --
-
 # Loop through each item in the collections to build a list of videos currently
 # in the output folder(s)
 ForEach ( $VideoObject in $ConvertTheseVideos ) {
@@ -185,8 +183,6 @@ ForEach ( $VideoObject in $ConvertTheseVideos ) {
 }
 
 # ------------------------------------------------------------------------------
-
-# -- Setup Part 4 --
 
 # Loop through each item in the collections to build a list of videos that would
 # be written to the output folder(s)
