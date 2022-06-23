@@ -274,21 +274,21 @@ Else {
 				# Convert that size data into a human-readable format
 				# Modified from: https://www.spguides.com/check-file-size-using-powershell/
 				If ( $CurrentVideoRawSize -gt 1TB ) {
-					$CurrentVideoReadablewSize = [string]::Format( "{0:0.00} TB", $CurrentVideoRawSize / 1TB )
+					$CurrentVideoReadableSize = [string]::Format( "{0:0.00} TB", $CurrentVideoRawSize / 1TB )
 				}
 				ElseIf ( $CurrentVideoRawSize -gt 1GB ) {
-					$CurrentVideoReadablewSize = [string]::Format( "{0:0.00} GB", $CurrentVideoRawSize / 1GB )
+					$CurrentVideoReadableSize = [string]::Format( "{0:0.00} GB", $CurrentVideoRawSize / 1GB )
 				}
 				ElseIf ( $CurrentVideoRawSize -gt 1MB ) {
-					$CurrentVideoReadablewSize = [string]::Format( "{0:0.00} MB", $CurrentVideoRawSize / 1MB )
+					$CurrentVideoReadableSize = [string]::Format( "{0:0.00} MB", $CurrentVideoRawSize / 1MB )
 				}
 				ElseIf ( $CurrentVideoRawSize -gt 1KB ) {
-					$CurrentVideoReadablewSize = [string]::Format( "{0:0.00} kB", $CurrentVideoRawSize / 1KB )
+					$CurrentVideoReadableSize = [string]::Format( "{0:0.00} kB", $CurrentVideoRawSize / 1KB )
 				}
 				ElseIf ( $CurrentVideoRawSize -gt 0 ) {
-					$CurrentVideoReadablewSize = [string]::Format( "{0:0.00} B", $CurrentVideoRawSize ) }
+					$CurrentVideoReadableSize = [string]::Format( "{0:0.00} B", $CurrentVideoRawSize ) }
 				Else {
-					$CurrentVideoReadablewSize = ""
+					$CurrentVideoReadableSize = ""
 				}
 				# Announce which video is about to be processed
 				Write-Host "   Starting Input: " -BackgroundColor Magenta -ForegroundColor White -NoNewline
