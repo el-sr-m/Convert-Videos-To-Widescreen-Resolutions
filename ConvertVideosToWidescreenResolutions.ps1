@@ -234,7 +234,7 @@ If ( $VideoNamingCollisions ) {
 	# temporary array
 	ForEach ( $Collision in $VideoNamingCollisions ) {
 		# Modified from: https://learn-powershell.net/2012/08/12/reversing-a-string-using-powershell/
-		$TemporaryArray.Add( ( [Regex]::Matches( $Collision, ".", "RightToLeft" ) | ForEach { $_.Value } ) -Join "" )
+		$TemporaryArray.Add( ( [Regex]::Matches( $Collision, ".", "RightToLeft" ) | ForEach-Object { $_.Value } ) -Join "" )
 	}
 	#Sort that array
 	$TemporaryArray = $TemporaryArray | Sort-Object
@@ -243,7 +243,7 @@ If ( $VideoNamingCollisions ) {
 	# Reverse the reversed strings and re-add them to the original array
 	ForEach ( $TemporaryString in $TemporaryArray ) {
 		# Modified from: https://learn-powershell.net/2012/08/12/reversing-a-string-using-powershell/
-		$VideoNamingCollisions.Add( ( [Regex]::Matches( $TemporaryString, ".", "RightToLeft" ) | ForEach { $_.Value } ) -Join "" )
+		$VideoNamingCollisions.Add( ( [Regex]::Matches( $TemporaryString, ".", "RightToLeft" ) | ForEach-Object { $_.Value } ) -Join "" )
 	}
 	# Display the collisions for the user to fix
 	ForEach ( $Collision in $VideoNamingCollisions ) {
